@@ -36,10 +36,6 @@ else if ((Math.Abs(n % 2) == 0) && n > 1)
 {
     Console.WriteLine($"{n - 2}, {n}");
 }
-else if ((Math.Abs(n % 2) == 0) && n > 1)
-{
-    Console.WriteLine($"{n - 2}, {n}");
-}
 else if (n > 1)
 {
     Console.WriteLine($"{n - 1}");
