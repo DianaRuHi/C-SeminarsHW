@@ -15,7 +15,7 @@ else if (n >= count)
     while (count <= n)
     {
         Console.Write($"{count}");
-        if (count < n-1) 
+        if (count < n - 1)
         {
             Console.Write(", ");
         }
@@ -24,8 +24,8 @@ else if (n >= count)
 }
 else if (n <= count)
 {
-    count = n-n%2;
-    while (count <=0)
+    count = n - n % 2;
+    while (count <= 0)
     {
         Console.Write($"{count}");
         if (count != 0)
