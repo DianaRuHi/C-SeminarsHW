@@ -12,39 +12,26 @@ if (n == 1)
 }
 else if (n >= count)
 {
-    while (count < n - 2)
+    while (count <= n)
     {
-        Console.Write($"{count}, ");
+        Console.Write($"{count}");
+        if (count < n-1) 
+        {
+            Console.Write(", ");
+        }
         count += 2;
     }
 }
-else if (n < count)
+else if (n <= count)
 {
-    count = 0;
-    while (count > n + 2)
+    count = n-n%2;
+    while (count <=0)
     {
-        Console.Write($"{count}, ");
-        count -= 2;
+        Console.Write($"{count}");
+        if (count != 0)
+        {
+            Console.Write(", ");
+        }
+        count += 2;
     }
-}
-
-if (n == 0 || n == 2) // это для того, чтобы в конце у нечетных чисел не было запятой, как это сделать по-другому, я не знаю
-{
-    Console.WriteLine($"{n}");
-}
-else if ((Math.Abs(n % 2) == 0) && n > 1)
-{
-    Console.WriteLine($"{n - 2}, {n}");
-}
-else if (n > 1)
-{
-    Console.WriteLine($"{n - 1}");
-}
-else if ((Math.Abs(n % 2) == 0) && n < 1)
-{
-    Console.WriteLine($"{n + 2}, {n}");
-}
-else if (n < 1)
-{
-    Console.WriteLine($"{n + 1}");
 }
