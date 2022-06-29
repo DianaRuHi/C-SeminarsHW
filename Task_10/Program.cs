@@ -6,9 +6,10 @@
 Console.WriteLine("Введите трехзначное число.");
 Console.Write("n = ");
 int num = Convert.ToInt32(Console.ReadLine());
-int digit2 = Math.Abs((num / 10) % 10);
 
 if (num < -999 || (num > -100 && num < 100) || num > 999) Console.WriteLine("Ошибка ввода.");
-else Console.WriteLine($"Вторая цифра это {digit2}");
-
-
+else 
+{
+    int digit2 = Math.Abs((num / 10) % 10);
+    Console.WriteLine($"Вторая цифра это {digit2}");
+}
