@@ -57,7 +57,7 @@ void SortRowsInDescendingOrderOfElements(int[,] matr)
     }
 }
 
-int[,] matrix = CreateMatrixRndInt (4,5,0,10);
+int[,] matrix = CreateMatrixRndInt(4, 5, 0, 10);
 PrintMatrix(matrix);
 Console.WriteLine();
 SortRowsInDescendingOrderOfElements(matrix);
