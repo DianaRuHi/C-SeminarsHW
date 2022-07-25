@@ -7,6 +7,22 @@
 34(1,0,0) 41(1,1,0)
 27(0,0,1) 90(0,1,1)
 26(1,0,1) 55(1,1,1) */
+int FindSameValue(int[,,] arr, int x, int y, int z)
+{
+    int result = 0;
+    for (int i = 0; i < arr.GetLength(0); i++)
+    {
+        for (int j = 0; j < arr.GetLength(1); j++)
+        {
+            for (int k = 0; k < arr.GetLength(2); k++)
+            {
+                if (result == 0 && i == x && j == y && k == z) result = 0;
+                else if (arr[i, j, k] == arr[x, y, z]) result = 1;
+            }
+        }
+    }
+    return result;
+}
 
 int[,,] Create3DArray(int x, int y, int z)
 {
@@ -18,25 +34,11 @@ int[,,] Create3DArray(int x, int y, int z)
         {
             for (int k = 0; k < z; k++)
             {
-                // Думаю, тут можно использовать какую-нибудь функцию F(x,y,z) 
-                // с однозначным отображением в множество двузначных чисел,
-                // но я ни одной такой не знаю..
-                int paper = 0;
-                while (paper == 0)
+                int paper = 1;
+                while (paper == 1)
                 {
                     result[i, j, k] = rnd.Next(10, 100);
-                    paper = 1;
-                    for (int i1 = 0; i1 <= i; i1++)
-                    {
-                        for (int j1 = 0; j1 <= j; j1++)
-                        {
-                            for (int k1 = 0; k1 < k; k1++)
-                            {
-                                if (result[i, j, k] == result[i1, j1, k1]) paper = 0;
-                            }
-                        }
-                    }
-
+                    paper = FindSameValue(result, i, j, k);
                 }
             }
         }
@@ -60,5 +62,5 @@ void Print3DArray(int[,,] matr)
     }
 }
 
-int[,,] matrix3D = Create3DArray(3, 2, 4);
+int[,,] matrix3D =Create3DArray(3, 2, 4);
 Print3DArray(matrix3D);
